@@ -1,3 +1,2 @@
 <?php 
-echo($_SESSION['user']['username']);
-?>
+echo("<h1>Successfully logged in!</h1>");
