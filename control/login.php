@@ -2,10 +2,10 @@
 include_once 'includes/dbconnection.php';
 
 if (isset($_POST)) {
-    $username = $GLOBALS['con'].quote($_POST['username']);
+    $email = $GLOBALS['con'].quote($_POST['email']);
     $password = $GLOBALS['con'].quote($_POST['password']);
     $password = password_hash($password);
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $result = $con->query($sql);
     if ($result->rowCount() > 0) {
         $row = $result->fetch();
